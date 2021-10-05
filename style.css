@@ -10,9 +10,14 @@
   align-items: center;
 }
 
-.square{
+.square, .squareMax{
   margin: 0px 10px;
   height: 100px;
   width: 100px;
   background-color: deepskyblue;
+}
+
+h1{
+  align-items: center;
+  justify-content: center; 
 }
