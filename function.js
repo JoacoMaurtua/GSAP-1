@@ -159,33 +159,33 @@ TweenMax.staggerFrom(squaresMaxArray,1,{
 })
 
 
-/*********TimeLineLite******/
+/*********Use delay for consecutive animations ******/
 
 const square9 = document.getElementById('square9');
-const square10 = document.getElementById('square10');
+const square11 = document.getElementById('square11');
 /* const square11 = document.getElementById('square11');
 const square12 = document.getElementById('square12'); */
 const squaresTLL = document.querySelectorAll('.squareTLL')
 
-TweenLite.to(square9, 1, {
+/* TweenLite.to(square9, 1, {
   y:-130,
   backgroundColor: '#ffea00',
   delay: 1
 });
 
-TweenLite.to(square10, 1, {
+TweenLite.to(square11, 1, {
   y:130,
   backgroundColor: '#ff1493',
   delay: 2
 });
 
 TweenLite.to(square9,1,{
-  x:120,
+  x:240,
   delay: 3
 });
 
-TweenLite.to(square10,1,{
-  x:-120,
+TweenLite.to(square11,1,{
+  x:-240,
   delay: 4
 });
 
@@ -194,10 +194,41 @@ TweenLite.to(square9,1,{
   delay: 5
 });
 
-TweenLite.to(square10,1,{
+TweenLite.to(square11,1,{
   y:0,
   delay: 6
-});
+}); */
 
 // Esto podria funcionar en caso de tener pocas animaciones pero en caso de tener varias
-// se volveria tedioso
+// se volveria tedioso.
+
+
+/**********TimeLineLite********/
+
+const t1 = new TimelineLite();
+
+t1.to(square9, 1, {
+  y:-130,
+  backgroundColor: '#ffea00'
+});
+
+t1.to(square11, 1, {
+  y:130,
+  backgroundColor: '#ff1493'
+});
+
+t1.to(square9,1,{
+  x:240
+});
+
+t1.to(square11,1,{
+  x:-240
+});
+
+t1.to(square9,1,{
+  y:0
+});
+
+t1.to(square11,1,{
+  y:0
+});
