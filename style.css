@@ -10,7 +10,7 @@
   align-items: center;
 }
 
-.square, .squareMax{
+.square, .squareMax, .squareTLL{
   margin: 0px 10px;
   height: 100px;
   width: 100px;

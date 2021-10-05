@@ -156,5 +156,48 @@ TweenMax.staggerFrom(squaresMaxArray,1,{
   },
   stagger: 1
  
- 
 })
+
+
+/*********TimeLineLite******/
+
+const square9 = document.getElementById('square9');
+const square10 = document.getElementById('square10');
+/* const square11 = document.getElementById('square11');
+const square12 = document.getElementById('square12'); */
+const squaresTLL = document.querySelectorAll('.squareTLL')
+
+TweenLite.to(square9, 1, {
+  y:-130,
+  backgroundColor: '#ffea00',
+  delay: 1
+});
+
+TweenLite.to(square10, 1, {
+  y:130,
+  backgroundColor: '#ff1493',
+  delay: 2
+});
+
+TweenLite.to(square9,1,{
+  x:120,
+  delay: 3
+});
+
+TweenLite.to(square10,1,{
+  x:-120,
+  delay: 4
+});
+
+TweenLite.to(square9,1,{
+  y:0,
+  delay: 5
+});
+
+TweenLite.to(square10,1,{
+  y:0,
+  delay: 6
+});
+
+// Esto podria funcionar en caso de tener pocas animaciones pero en caso de tener varias
+// se volveria tedioso
