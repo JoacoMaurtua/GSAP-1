@@ -210,37 +210,41 @@ de instancias de TweenLite, TweenMax, TimelineLite y / o TimelineMax*/
 
 const t1 = new TimelineLite();
 
+const tm = new TimelineMax({repeat:1, yoyo:true});  //dos propiedades que se le pueden pasar
+
+
+
 //t1.reverse(); //revierte la direccion de las animaciones
-t1.to(square9, 1, {
+tm.to(square9, 1, {
   y:-130,
   backgroundColor: '#ffea00'
 });
 
-t1.to(square11, 1, {
+tm.to(square11, 1, {
   y:130,
   backgroundColor: '#ff1493'
-},'2'); //demora 2 segundos despues de la ultima animacion
+},'2','start'); //demora 2 segundos despues de la ultima animacion
 
-t1.addLabel('lbl', '+=0') //Agrega una etiqueta a la línea de tiempo, lo que facilita marcar posiciones / tiempos importantes.
+tm.addLabel('lbl', '+=0') //Agrega una etiqueta a la línea de tiempo, lo que facilita marcar posiciones / tiempos importantes.
 
-t1.to(square9,1,{
+tm.to(square9,1,{
   x:240
 });
 
-t1.to(square11,1,{
+tm.to(square11,1,{
   x:-240
 });
 
-t1.to(square9,1,{
+tm.to(square9,1,{
   y:0
   
 });
 
-t1.to(square11,1,{
+tm.to(square11,1,{
   y:0
-});
+},'finish');
 
-t1.to(squaresTLL,0.5,{
+tm.to(squaresTLL,0.5,{
   scale:0.3,
   rotation: 360
 },'lbl')
@@ -255,4 +259,14 @@ nestedT1.to(squaresTLL, 1, {
   autoAlpha:0
 });
 
-t1.add(nestedT1); //anidamiento
+tm.add(nestedT1); //anidamiento
+
+
+/**********TimeLineMax********/
+
+//const tm = new TimelineMax();
+
+//Alternar entre t1 y tm en caso de querer probar
+//ambas lineas de tiempo
+
+//tm.tweenFromTo('start','finish');
