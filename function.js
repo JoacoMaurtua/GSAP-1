@@ -270,3 +270,32 @@ tm.add(nestedT1); //anidamiento
 //ambas lineas de tiempo
 
 //tm.tweenFromTo('start','finish');
+
+
+
+
+/*********Easing Functions***********/
+
+//Power, Elastic
+
+const square13 = document.getElementById('square13');
+
+/* TweenMax.to(square13, 1, {
+  y:300,
+  ease: Power0.easeOut
+}) */
+
+/* TweenMax.to(square13, 1, {
+  y:-300,
+  ease: Elastic.easeOut.config(1,0.3)
+}); */
+
+/* TweenMax.from(square13, 1, {
+  y:300,
+  ease: Bounce.easeOut
+}); */
+
+TweenMax.from(square13, 1, {
+  y:300,
+  ease: SlowMo.ease.config(0.5,0.7)
+})
