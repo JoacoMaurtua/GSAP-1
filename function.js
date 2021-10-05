@@ -205,8 +205,12 @@ TweenLite.to(square11,1,{
 
 /**********TimeLineLite********/
 
+/*TimelineLite es una clase de línea de tiempo intuitiva y liviana para crear y administrar secuencias 
+de instancias de TweenLite, TweenMax, TimelineLite y / o TimelineMax*/
+
 const t1 = new TimelineLite();
 
+//t1.reverse(); //revierte la direccion de las animaciones
 t1.to(square9, 1, {
   y:-130,
   backgroundColor: '#ffea00'
@@ -215,7 +219,9 @@ t1.to(square9, 1, {
 t1.to(square11, 1, {
   y:130,
   backgroundColor: '#ff1493'
-});
+},'2'); //demora 2 segundos despues de la ultima animacion
+
+t1.addLabel('lbl', '+=0') //Agrega una etiqueta a la línea de tiempo, lo que facilita marcar posiciones / tiempos importantes.
 
 t1.to(square9,1,{
   x:240
@@ -227,8 +233,26 @@ t1.to(square11,1,{
 
 t1.to(square9,1,{
   y:0
+  
 });
 
 t1.to(square11,1,{
   y:0
 });
+
+t1.to(squaresTLL,0.5,{
+  scale:0.3,
+  rotation: 360
+},'lbl')
+
+//t1.play(2) //metodo para indicar que animacion empieza
+
+//Se puede anidar lineas de tiempo que
+
+const nestedT1 = new TimelineLite();
+
+nestedT1.to(squaresTLL, 1, {
+  autoAlpha:0
+});
+
+t1.add(nestedT1); //anidamiento
